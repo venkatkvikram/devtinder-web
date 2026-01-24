@@ -1,23 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import NavBar from './components/NavBar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Body from './components/Body'
+import Login from './components/Login'
+import { Provider } from 'react-redux'
+import appStore from './utils/appStore'
+import Feed from './components/Feed'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <BrowserRouter basename='/'>
-        <Routes>
-          <Route path='/' element={<Body />} >
-            <Route path="/login" element={<div>Login</div>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Provider store={appStore}>
+        <BrowserRouter basename='/'>
+          <Routes>
+            <Route path='/' element={<Body />} >
+              <Route path="/login" element={<Login />} />
+              <Route path='/feed' element={<Feed />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   )
 }

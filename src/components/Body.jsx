@@ -5,7 +5,6 @@ import Footer from "./Footer"
 const Body = () => {
     return (
         <div>
-
             <NavBar />
             <Outlet /> {/* any child routes of body will be rendred here */}
             <Footer />
