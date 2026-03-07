@@ -10,6 +10,7 @@ const Login = () => {
 
     const [emailId, setEmailId] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -27,8 +28,8 @@ const Login = () => {
             navigate("/feed")
         } catch (error) {
             console.error('Login failed:', error);
+            setError(error?.response?.data || 'Login failed');
         }
-
     }
 
     return (
@@ -42,12 +43,13 @@ const Login = () => {
                         <label className="fieldset-label my-2">Password</label>
                         <input type="password" className="input" value={password} placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
                     </fieldset>
+                    {error && <p className="text-error">{error}</p>}
                     <div className="card-actions justify-center m-2">
                         <button className="btn btn-primary" onClick={handleLogin}>Login</button>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    )   
 }
 export default Login;
