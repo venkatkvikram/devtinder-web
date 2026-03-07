@@ -22,3 +22,5 @@
 - NavBar should update as soon as user logs in
 - Refactor code to add constants file 
 - You wont be able to access profile endpoint without logging in
+- If token is not present redirect to login page
+-
