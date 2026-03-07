@@ -21,3 +21,4 @@
 - Login and set the data in redux
 - NavBar should update as soon as user logs in
 - Refactor code to add constants file 
+- You wont be able to access profile endpoint without logging in
