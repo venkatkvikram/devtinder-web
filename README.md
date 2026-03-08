@@ -25,4 +25,7 @@
 - If token is not present redirect to login page
 - Get the feed and add it in store
 - Create feed component and build user card component to display inside it
+- Edit Profile
+- Toast notification for success
+
 
